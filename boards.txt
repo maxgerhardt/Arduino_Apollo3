@@ -298,7 +298,7 @@ edge2.menu.loader.sparkfun_svl.build.ldscript={build.variant.path}/linker_script
 
 amap3micromod.name=SparkFun Artemis MicroMod
 amap3micromod.build.variant=artemis_micromod
-amap3micromod.build.board=AM_AP3_SFE_ARTEMIS_MICROMOD
+amap3micromod.build.board=AM_AP3_SFE_BB_ARTEMIS_MICROMOD
 amap3micromod.upload.maximum_size=960000
 amap3micromod.upload.sbl_baud=115200
 amap3micromod.build.arch=APOLLO3
