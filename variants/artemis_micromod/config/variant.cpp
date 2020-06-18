@@ -83,3 +83,4 @@ Uart Serial1(1, 25, 24); // Declares a Uart object called Serial1 using instance
 // Mapping of analog pins to digital pins of variant
 extern const ap3_gpio_pin_t ap3_analog_A32 = 32;
 extern const ap3_gpio_pin_t ap3_analog_A35 = 35;
+extern const ap3_gpio_pin_t ap3_analog_A31 = 31;
