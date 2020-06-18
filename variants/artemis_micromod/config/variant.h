@@ -47,10 +47,12 @@ extern Uart Serial1;
 // (this method - aliasing the name of a constant variable - is compatible with the usage of 'AX' names in 'arm_math.h')
 #define A0 ap3_analog_A32
 #define A1 ap3_analog_A35
+#define BATTVIN3 ap3_analog_A31
 
 // Promise the existence of analog pin names
 extern const ap3_gpio_pin_t ap3_analog_A32;
 extern const ap3_gpio_pin_t ap3_analog_A35;
+extern const ap3_gpio_pin_t ap3_analog_A31;
 
 #define LED_BUILTIN 19
 
@@ -61,25 +63,18 @@ extern const ap3_gpio_pin_t ap3_analog_A35;
 #define D0 1
 #define D1 2
 
-#define SDIO_CLK 5
-#define SDIO_CMD 7
-#define SDIO_DATA0 22
-#define SDIO_DATA1 26
-#define SDIO_DATA2 4
-#define SDIO_DATA3 23
-
-#define MOSI1 7
-#define MISO1 6 //Duplicate route to pad 22 as well.
-#define SCK1 5
-#define CS1 23
+#define MOSI 7
+#define MISO 6 //Duplicate route to pad 22 as well.
+#define SCK 5
+#define CS 23
 
 #define SDA1 9
 #define SCL1 8
 
-#define SCK 42
-#define MOSI 38
-#define MISO 43
-#define CS 41
+#define SCK1 42
+#define MOSI1 38
+#define MISO1 43
+#define CS1 41
 
 #define PDM_DATA 36
 #define PDM_CLOCK 37
