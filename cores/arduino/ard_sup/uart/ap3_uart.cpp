@@ -375,7 +375,7 @@ ap3_err_t Uart::_begin(void)
 
     if (_pinRTS != AP3_UART_PIN_UNUSED)
     {
-        retval = ap3_uart_pad_funcsel(_instance, AP3_UART_TX, ap3_gpio_pin2pad(_pinRTS), &funcsel);
+        retval = ap3_uart_pad_funcsel(_instance, AP3_UART_RTS, ap3_gpio_pin2pad(_pinRTS), &funcsel);
         if (retval != AP3_OK)
         {
             return retval;
@@ -391,7 +391,7 @@ ap3_err_t Uart::_begin(void)
 
     if (_pinCTS != AP3_UART_PIN_UNUSED)
     {
-        retval = ap3_uart_pad_funcsel(_instance, AP3_UART_RX, ap3_gpio_pin2pad(_pinCTS), &funcsel);
+        retval = ap3_uart_pad_funcsel(_instance, AP3_UART_CTS, ap3_gpio_pin2pad(_pinCTS), &funcsel);
         if (retval != AP3_OK)
         {
             return retval;
