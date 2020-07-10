@@ -311,7 +311,6 @@ ap3_err_t Uart::set_config(HardwareSerial_Config_e HWSconfig)
     {
         _config.ui32FlowControl = AM_HAL_UART_FLOW_CTRL_CTS_ONLY;
     }
-
     return retval;
 }
 
