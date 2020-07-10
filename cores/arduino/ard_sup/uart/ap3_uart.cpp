@@ -296,6 +296,22 @@ ap3_err_t Uart::set_config(HardwareSerial_Config_e HWSconfig)
         retval = AP3_INVALID_ARG;
         break;
     }
+
+    //Setup flow control
+    _config.ui32FlowControl = AM_HAL_UART_FLOW_CTRL_NONE;
+    if(_pinRTS != AP3_UART_PIN_UNUSED && _pinCTS != AP3_UART_PIN_UNUSED)
+    {
+        _config.ui32FlowControl = AM_HAL_UART_FLOW_CTRL_RTS_CTS;
+    }
+    else if(_pinRTS != AP3_UART_PIN_UNUSED)
+    {
+        _config.ui32FlowControl = AM_HAL_UART_FLOW_CTRL_RTS_ONLY;
+    }
+    else if(_pinCTS != AP3_UART_PIN_UNUSED)
+    {
+        _config.ui32FlowControl = AM_HAL_UART_FLOW_CTRL_CTS_ONLY;
+    }
+    
     return retval;
 }
 
