@@ -60,8 +60,8 @@ extern const ap3_gpio_pin_t ap3_analog_A31;
 #define PWM0 44
 #define PWM1 45
 
-#define D0 1
-#define D1 2
+#define D0 0
+#define D1 1
 
 #define MOSI 7
 #define MISO 6 //Duplicate route to pad 22 as well.
@@ -70,6 +70,7 @@ extern const ap3_gpio_pin_t ap3_analog_A31;
 
 #define SDA1 9
 #define SCL1 8
+#define I2CINT 2
 
 #define SCK1 42
 #define MOSI1 38
