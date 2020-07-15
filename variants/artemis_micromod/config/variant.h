@@ -62,6 +62,8 @@ extern const ap3_gpio_pin_t ap3_analog_A31;
 
 #define LED_BUILTIN 19
 
+#define POWER_CONTROL 3
+
 // Pins with dedicated silk
 #define PWM0 44
 #define PWM1 45
