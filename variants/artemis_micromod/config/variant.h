@@ -43,10 +43,10 @@ extern Uart Serial1;
 // SPI Defines
 #define SPI_INTERFACES_COUNT 2
 
-#define AP3_SPI_IOM 0                   // Specify that SPI uses IOMaster 0
+#define AP3_SPI_IOM 3                   // Specify that SPI uses IOMaster 3
 #define AP3_SPI_DUP ap3_spi_full_duplex // Specify that SPI is full-duplex (as opposed to ap3_spi_tx_only or ap3_spi_rx_only)
 
-#define AP3_SPI1_IOM 3
+#define AP3_SPI1_IOM 0
 #define AP3_SPI1_DUP ap3_spi_full_duplex
 
 // Mapping of analog pins to digital pins of variant
@@ -71,19 +71,19 @@ extern const ap3_gpio_pin_t ap3_analog_A31;
 #define D0 0
 #define D1 1
 
-#define MOSI 7
-#define MISO 6 //Duplicate route to pad 22 as well.
-#define SCK 5
-#define CS 23
+#define MOSI1 7
+#define MISO1 6 //Duplicate route to pad 22 as well.
+#define SCK1 5
+#define CS1 23
 
 #define SDA1 9
 #define SCL1 8
 #define I2CINT 2
 
-#define SCK1 42
-#define MOSI1 38
-#define MISO1 43
-#define CS1 41
+#define MOSI 38
+#define MISO 43
+#define SCK 42
+#define CS 41
 
 #define PDM_DATA 36
 #define PDM_CLOCK 37
