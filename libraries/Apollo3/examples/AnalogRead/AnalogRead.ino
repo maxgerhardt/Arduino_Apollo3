@@ -4,7 +4,6 @@
 */
 
 /*
-
   The Apollo3 microcontroller includes an onboard ADC (analog to digital converter)
   It is able to read analog voltages from 0V to 2V on any of the following 10 pads:
   11, 12, 13, 16, 29, 31, 32, 33, 34, 35
@@ -23,15 +22,7 @@
 
 */
 
-#define RESOLUTION_BITS (16)      // choose resolution (explained in depth below)
-
-#ifdef ADCPIN
-#define EXTERNAL_ADC_PIN ADCPIN   // ADCPIN is the lowest analog capable pin exposed on the variant
-#endif                            // - if no exposed pins are analog capable this will be undefined
-                                  // - to use another pin provide an analog capable pin number such as:
-                                  //   - A0 -> A9 (when analog pins are named sequentially from 0)
-                                  //   - A11 -> A13, A16, A29, A31 -> A35 (when pins are named after Apollo3 pads)
-                                  //   - A variant-specific pin number (when none of the above apply)
+#define RESOLUTION_BITS (14)      // choose resolution (explained in depth below)
 
 void setup() {
   Serial.begin(115200);
@@ -41,17 +32,14 @@ void setup() {
                                             //  - maximum: 16 bits (padded with trailing zeroes)
                                             //  - ADC:     14 bits (maximum ADC resolution)
                                             //  - default: 10 bits (standard Arduino setting)
-                                            //  - minimum:  1 bit
 
   analogWriteResolution(RESOLUTION_BITS);   // match resolution for analogWrite
 }
 
 void loop() {
-#ifdef ADCPIN
-  int external = analogRead(EXTERNAL_ADC_PIN); // reads the analog voltage on the selected analog pin
+  int external = analogRead(A0); //Automatically sets pin to analog input
   Serial.printf("external (counts): %d, ", external);
   analogWrite(LED_BUILTIN, external);
-#endif
 
   int vcc_3 = analogReadVCCDiv3();    // reads VCC across a 1/3 voltage divider
   int vss = analogReadVSS();          // ideally 0
